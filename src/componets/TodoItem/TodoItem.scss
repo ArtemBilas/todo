@@ -1,0 +1,49 @@
+@import './src/styles/variables';
+
+.todo-item {
+    width: 100%;
+    border-radius: 2px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    margin-bottom: 10px;
+
+    .check-box{
+        margin: 0;
+    }
+    .content{
+        padding-left: 15px;
+        color: $font-color;
+
+        &.done{
+            text-decoration-line: line-through;
+        }
+    }
+
+    .icon-container{
+        display: flex;
+        align-items: center;
+        margin: 0;
+
+        .anticon-edit{
+            margin-right: 5px;
+            &:hover{
+                transform: scale(1.2);
+                color: $font-color1;
+            }
+        }
+
+        .anticon-delete{
+            color: $font-color;
+            cursor: pointer;
+            font-size: 1.25rem;
+
+            &:hover{
+                transform: scale(1.2);
+                color: tomato;
+            }
+        }
+    }
+}

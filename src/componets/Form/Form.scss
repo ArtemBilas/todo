@@ -1,0 +1,15 @@
+.form {
+    width: 100%;
+    .ant-input-group {
+        display: flex;
+        width: 100%;
+
+        .ant-input {
+            width: 80%;
+        }
+
+        .ant-btn {
+            width: 20%;
+        }
+    }
+}

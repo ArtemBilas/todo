@@ -1,0 +1,30 @@
+@import 'antd/dist/antd.css';
+@import 'styles/_variables.scss';
+
+html,
+body{
+    font-size: 16px;
+}
+
+.ant-modal{
+    .error-value{
+        padding-top: 10px;
+        color: tomato;
+        font-size: 14px;
+    }
+}
+
+.ant-layout {
+    height: 100vh;
+    padding: 48px 30px;
+
+    .app-container {
+        max-height: 80%;
+        height: 100%;
+
+        .title{
+            font-size: 2rem;
+            color: $font-color;
+        }
+    }
+}
