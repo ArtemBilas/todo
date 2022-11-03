@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from "react-redux";
-import { Empty } from "antd";
+import { Col, Empty, Row } from "antd";
 import TodoItem from "../TodoItem/TodoItem";
 import './TodoList.scss';
 import FilterItem from '../Filter-Item/Filter-Item';
@@ -12,7 +12,11 @@ const TodoList = () => {
         {todos.length
             ? (
                 <>
-                    <FilterItem />
+                    <Row span={24} justify="start">
+                        <Col span={24}>
+                            <FilterItem />
+                        </Col>
+                    </Row>
                     {todos.map(item => <TodoItem key={item.id} {...item} />)}
                 </>
             ) : (<><Empty description={false} /></>)
