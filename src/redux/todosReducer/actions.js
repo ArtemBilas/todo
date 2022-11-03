@@ -1,5 +1,3 @@
-import { filterModes } from "../../constans"
-
 export const todoActionsType = {
     TODOS_ADD_TODO: "TODOS_SET_TODO",
     TODOS_EDIT_TODO: "TODOS_EDIT_TODO",
