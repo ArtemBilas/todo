@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import Checkbox from 'antd/es/checkbox/Checkbox';
-import {DeleteOutlined, EditOutlined} from "@ant-design/icons";
 import {useDispatch} from "react-redux";
-import {todoActions, todoActionsType} from "../../redux/todosReducer";
+import {todoActions} from "../../redux/todosReducer";
+import {DeleteOutlined, EditOutlined} from "@ant-design/icons";
+import Checkbox from 'antd/es/checkbox/Checkbox';
 import Modal from "antd/es/modal/Modal";
 import {Input} from "antd";
 import './TodoItem.scss';
