@@ -1,10 +1,10 @@
-import { todoActionsType } from "./actions";
-import { loadState, saveState, throttle } from "../../utils";
+import { todoActionsType } from './actions';
+import { loadState } from '../../utils';
 
 const persistedState = loadState();
 
 const initialState = {
-    todos: persistedState ? [...persistedState] : [],
+    todos: persistedState ? [...persistedState.todos] : [],
     filterMode: 'all-list'
 }
 

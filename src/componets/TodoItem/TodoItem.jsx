@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from 'react';
-import {useDispatch} from "react-redux";
-import {todoActions} from "../../redux/todosReducer";
-import {DeleteOutlined, EditOutlined} from "@ant-design/icons";
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { todoActions } from '../../redux/todosReducer';
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import Checkbox from 'antd/es/checkbox/Checkbox';
-import Modal from "antd/es/modal/Modal";
-import {Input} from "antd";
+import Modal from 'antd/es/modal/Modal';
+import { Input } from 'antd';
 import './TodoItem.scss';
 
-const TodoItem = ({id, text, isDone}) => {
+const TodoItem = ({ id, text, isDone }) => {
     const dispatch = useDispatch();
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [modalInputValue, setModalInputValue] = useState('');
@@ -24,17 +24,17 @@ const TodoItem = ({id, text, isDone}) => {
     const handleInputModalValue = (e) => {
         let inputValue = e.target.value;
 
-        if(inputValue.length === 0 || !inputValue.trim()) {
+        if (inputValue.length === 0 || !inputValue.trim()) {
             setIsErrorValue(true);
             setModalInputValue(inputValue);
-        }else {
+        } else {
             setIsErrorValue(false);
             setModalInputValue(inputValue);
         }
     }
 
     const handleOkModal = () => {
-        if(isErrorValue) return;
+        if (isErrorValue) return;
 
         dispatch(todoActions.editTodo(id, modalInputValue));
         setModalIsOpen(false);
@@ -46,22 +46,22 @@ const TodoItem = ({id, text, isDone}) => {
 
     useEffect(() => {
         setModalInputValue(text);
-    }, []);
+    }, [text]);
 
     return <div className='todo-item'>
         <p className='check-box'>
-            <Checkbox onChange={() => checkboxHandle()} checked={isDone}/>
+            <Checkbox onChange={() => checkboxHandle()} checked={isDone} />
             <span className={!isDone ? 'content ' : 'content done'}>{text}</span>
         </p>
 
         <p className='icon-container'>
-            <EditOutlined onClick={() => setModalIsOpen(true)}/>
-            <DeleteOutlined onClick={() => handleDeleteTodo()}/>
+            <EditOutlined onClick={() => setModalIsOpen(true)} />
+            <DeleteOutlined onClick={() => handleDeleteTodo()} />
         </p>
 
         <Modal
             key={`modal-${id}`}
-            title="Edit ToDo"
+            title='Edit ToDo'
             open={modalIsOpen}
             onOk={() => handleOkModal()}
             onCancel={() => handleCancelModal()}
@@ -74,7 +74,7 @@ const TodoItem = ({id, text, isDone}) => {
                 value={modalInputValue}
             />
 
-            {!isErrorValue ? null : <span className='error-value'>The value can not be empty!</span> }
+            {!isErrorValue ? null : <span className='error-value'>The value can not be empty!</span>}
         </Modal>
     </div>
 }

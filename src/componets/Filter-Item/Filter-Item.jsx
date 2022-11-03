@@ -1,5 +1,7 @@
-import { Row, Col, Button } from 'antd';
+import React from 'react';
 import { useDispatch } from 'react-redux';
+import { Row, Col, Button } from 'antd';
+import { useEffect } from 'react';
 import { filterModes } from '../../constans';
 import { todoActions } from '../../redux/todosReducer';
 import './Filter-Item.scss';
@@ -18,6 +20,10 @@ const FilterItem = () => {
   const handleFilterNeedTodoList = () => {
     dispatch(todoActions.needTodoList(filterModes.filterNeedToDoList));
   }
+
+  useEffect(() => {
+    handleFilterAllList();
+  }, []);
 
   return <div className='filter-block'>
     <Row span={24} justify="start">

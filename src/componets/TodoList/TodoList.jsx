@@ -1,9 +1,9 @@
 import React from 'react';
-import { useSelector } from "react-redux";
-import { Col, Empty, Row } from "antd";
-import TodoItem from "../TodoItem/TodoItem";
-import FilterItem from '../Filter-Item/Filter-Item';
+import { useSelector } from 'react-redux';
+import { Col, Empty, Row } from 'antd';
 import { filterModes } from '../../constans';
+import TodoItem from '../TodoItem/TodoItem';
+import FilterItem from '../Filter-Item/Filter-Item';
 import './TodoList.scss';
 
 const TodoList = () => {
@@ -11,7 +11,7 @@ const TodoList = () => {
         const { todos, filterMode } = state.todos;
 
         if(filterMode === filterModes.filterAllList) return todos;
-        if(filterMode === filterModes.filterCompleteList) return todos.filter(todoItem => Boolean(todoItem.isDone) );
+        if(filterMode === filterModes.filterCompleteList) return todos.filter(todoItem => Boolean(todoItem.isDone));
         if(filterMode === filterModes.filterNeedToDoList) return todos.filter(todoItem => !Boolean(todoItem.isDone));
     });
 
@@ -19,7 +19,7 @@ const TodoList = () => {
         {todosListView.length !== 0
             ? (
                 <>
-                    <Row span={24} justify="start">
+                    <Row span={24} justify='start'>
                         <Col span={24}>
                             <FilterItem />
                         </Col>
