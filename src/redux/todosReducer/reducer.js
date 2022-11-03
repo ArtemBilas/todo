@@ -1,7 +1,12 @@
 import {todoActionsType} from "./actions";
+import { loadState, saveState, throttle} from "../../utils";
+
+const persistedState  = loadState();
+
+console.log(persistedState);
 
 const initialState = {
-    todos: []
+    todos: persistedState ? [...persistedState] : []
 }
 
 export const todoReducer = (state = initialState, action) => {
