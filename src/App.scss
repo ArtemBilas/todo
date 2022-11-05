@@ -19,8 +19,8 @@ body{
     padding: 48px 30px;
 
     .app-container {
-        max-height: 80%;
         height: 100%;
+        overflow: auto;
 
         .title{
             font-size: 2rem;

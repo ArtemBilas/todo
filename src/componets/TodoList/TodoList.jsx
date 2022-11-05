@@ -16,14 +16,14 @@ const TodoList = () => {
     });
 
     return <div className='todo-list'>
+        <Row justify='start'>
+            <Col span={24}>
+                <FilterItem />
+            </Col>
+        </Row>
         {todosListView.length !== 0
             ? (
                 <>
-                    <Row span={24} justify='start'>
-                        <Col span={24}>
-                            <FilterItem />
-                        </Col>
-                    </Row>
                     {todosListView.map(item => <TodoItem key={item.id} {...item} />)}
                 </>
             ) : (<><Empty description={false} /></>)
