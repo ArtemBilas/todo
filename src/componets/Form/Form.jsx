@@ -1,7 +1,7 @@
-import React, {useId, useState} from 'react';
+import React, {useState} from 'react';
 import {Button, Input} from "antd";
-import {useDispatch, useSelector} from "react-redux";
-import {todoActions, todoActionsType} from "../../redux/todosReducer";
+import {useDispatch} from "react-redux";
+import {todoActions} from "../../redux/todosReducer";
 import { v4 as uuidv4 } from 'uuid';
 import './Form.scss';
 
